@@ -1,16 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define ROW 4
-#define COLUMN 4
+#define ROW 3
+#define COLUMN 3
 #define OLD_COLOR 1
 #define NEW_COLOR 2
 
-int table[ROW][COLUMN] = {
-    {1, 0, 0, 1},
-    {0, 1, 1, 0},
-    {0, 0, 1, 0},
-    {1, 0, 0, 0}
+int v[ROW][COLUMN] = {
+    {1, 0, 0},
+    {0, 0, 1},
+    {1, 0, 1},
 };
 
 void printM(int N, int M, int v[N][M])
@@ -37,25 +36,38 @@ void printDiagonal(int v[ROW][COLUMN])
     }
 }
 
-void floodFill(int v[ROW][COLUMN], int x, int y)
-{
-    int count = 0;
-    for(int i = x; i < ROW; i++ )
-    {
-        for(int j = y; j < COLUMN; j++) 
-        {
-            if ((v[i + 1][j] == 1 || v[i - 1][j] == 1) && i > 0) {
-                count += 1;
-            }
-            if ((v[i][j + 1] == 1 || v[i][j - 1] == 1) && j > 0) {
-                count += 1;
-            }
-        }
-        if (count > 0) {
+int count = 0;
 
-        }
+void floodFill(int x, int y)
+{
+    int limit = -1;
+
+    if (x <= 0 || y <= 0 || x >= ROW - 1 || y >= COLUMN - 1) {
+        return; 
     }
-    printf("objects counted = %d\n", count);
+
+    if (v[x][y] == 2) { return; }
+
+    int right, left, down, up = 1;
+
+     if ((x + 1 < ROW) {
+        right = v[x + 1][y];
+     }
+
+     if (x - 1 >= 0) {
+        left = v[x - 1][y];
+     }
+
+    if ((v[x + 1][y] && v[x - 1][y] && v[x][y + 1] && v[x][y - 1]) == 0) {
+        count += 1;
+    }
+
+
+    v[x][y] = 2;
+    floodFill(x + 1, y); // right
+    floodFill(x - 1, y); // left
+    floodFill(x, y + 1); // up
+    floodFill(x, y - 1); // down
 }
 
 
@@ -63,11 +75,12 @@ int main(void)
 {
 
     printf("=================\n");
-    printM(ROW, COLUMN, table);
+    printM(ROW, COLUMN, v);
     printf("=================\n");
-    printDiagonal(table);
+    printDiagonal(v);
     printf("=================\n");
-    floodFill(table, 0, 0);
+    floodFill(0, 0);
+    printf("objects counted = %d\n", count);
 
     return 0;
 }
