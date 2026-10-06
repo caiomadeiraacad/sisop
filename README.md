@@ -1,6 +1,6 @@
 # sisop
 
-Trabalhos de Sistemas Operacionais (PUCRS, 2026/II), Prof. Filipo Mór. Autoria: Caio Madeira.
+Trabalhos de Sistemas Operacionais (PUCRS, 2026/II), Prof. Filipo Mór. Autoria: Caio Madeira, João Sperb e Victor.
 
 | Trabalho | Pasta | Relatório |
 |---|---|---|
