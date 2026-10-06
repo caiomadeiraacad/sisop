@@ -1,10 +1,11 @@
 PAR_SRC = src/conta-obj-paralelo.c
 SEQ_SRC = src/conta-obj-sequencial.c
+GER_SRC = tests/gera-matriz.c
 
-CC     = gcc
-CFLAGS = -O2 -Wall
+CC     = cc
+CFLAGS = -std=c89 -Wall -Wextra -pedantic -O2
 
-all: paralelo sequencial
+all: paralelo sequencial gera-matriz
 
 paralelo: $(PAR_SRC)
 	$(CC) $(CFLAGS) -pthread $(PAR_SRC) -o paralelo
@@ -12,7 +13,16 @@ paralelo: $(PAR_SRC)
 sequencial: $(SEQ_SRC)
 	$(CC) $(CFLAGS) $(SEQ_SRC) -o sequencial
 
-clean:
-	rm -f paralelo sequencial
+gera-matriz: $(GER_SRC)
+	$(CC) $(CFLAGS) $(GER_SRC) -o gera-matriz
 
-.PHONY: all clean
+test: all
+	sh scripts/testes.sh
+
+experimentos: all
+	sh scripts/experimentos.sh
+
+clean:
+	rm -f paralelo sequencial gera-matriz
+
+.PHONY: all test experimentos clean

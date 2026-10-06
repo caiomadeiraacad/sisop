@@ -1,0 +1,9 @@
+# binarios gerados pelo make
+t1/sequencial
+t1/paralelo
+t1/gera-matriz
+
+# matrizes grandes geradas pelos experimentos (dezenas/centenas de MB)
+t1/tests/grandes/
+
+.DS_Store
