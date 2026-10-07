@@ -1,4 +1,4 @@
-# Contagem paralela de objetos em uma matriz binária
+# floodfill - conectividade 8 - T1
 
 Trabalho prático de Sistemas Operacionais (PUCRS, Escola Politécnica, 2026/II), Prof. Filipo Mór.
 
