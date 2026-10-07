@@ -2,7 +2,7 @@
 
 Trabalho prático de Sistemas Operacionais (PUCRS, Escola Politécnica, 2026/II), Prof. Filipo Mór.
 
-**Autoria:** Caio Madeira
+**Autoria:** Caio Madeira, João SPerb e Victor.
 
 O programa conta os **objetos** de uma matriz binária: grupos de células com valor 1 ligadas por um lado ou por um canto (**conectividade 8**). Há duas versões que dão sempre o mesmo resultado:
 
