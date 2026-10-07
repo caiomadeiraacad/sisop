@@ -8,8 +8,9 @@ O programa conta os **objetos** de uma matriz binária: grupos de células com v
 
 - `src/conta-obj-sequencial.c`: um único fluxo de execução. É a referência de correção e de tempo.
 - `src/conta-obj-paralelo.c`: versão paralela com **Pthreads**, com número de threads configurável.
+- - `src/main.c`: versão sequencial (primeira feita).
 
-Tudo em ANSI C (C89), compilando sem avisos com `-std=c89 -Wall -Wextra -pedantic`, em Linux e macOS.
+Tudo em ANSI C (C89)
 
 ---
 
